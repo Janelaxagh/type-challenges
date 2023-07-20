@@ -1,14 +1,14 @@
-interface Todo {
+interface ITodo {
     title: string
     description: string
 }
 
-type MyReadonly<T> = T & {
+type TypeMyReadonly<T> = T & {
     readonly [K in keyof T]: T[K]
 }
 
 
-const todo: MyReadonly<Todo> = {
+const todo: TypeMyReadonly<ITodo> = {
     title: "Hey",
     description: "foobar"
 }
